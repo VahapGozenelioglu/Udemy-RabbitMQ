@@ -8,56 +8,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aef7dc34-0153-4178-bdac-14786dad0c0e" name="Changes" comment="">
+    <list default="true" id="aef7dc34-0153-4178-bdac-14786dad0c0e" name="Changes" comment="Declare Fanout typed exchange">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UdemyRabbitMQ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UdemyRabbitMQ/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/bin/Debug/net8.0/UdemyRabbitMQ.publisher.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/bin/Debug/net8.0/UdemyRabbitMQ.publisher.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/bin/Debug/net8.0/UdemyRabbitMQ.publisher.exe" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/bin/Debug/net8.0/UdemyRabbitMQ.publisher.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/bin/Debug/net8.0/UdemyRabbitMQ.publisher.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/bin/Debug/net8.0/UdemyRabbitMQ.publisher.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.genruntimeconfig.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/UdemyRabbitMQ.publisher.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/ref/UdemyRabbitMQ.publisher.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/ref/UdemyRabbitMQ.publisher.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/refint/UdemyRabbitMQ.publisher.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/Debug/net8.0/refint/UdemyRabbitMQ.publisher.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/UdemyRabbitMQ.publisher.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/UdemyRabbitMQ.publisher.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/UdemyRabbitMQ.publisher.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/UdemyRabbitMQ.publisher.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.publisher/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/bin/Debug/net8.0/UdemyRabbitMQ.subscriber.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/bin/Debug/net8.0/UdemyRabbitMQ.subscriber.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/bin/Debug/net8.0/UdemyRabbitMQ.subscriber.exe" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/bin/Debug/net8.0/UdemyRabbitMQ.subscriber.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/bin/Debug/net8.0/UdemyRabbitMQ.subscriber.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/bin/Debug/net8.0/UdemyRabbitMQ.subscriber.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.genruntimeconfig.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/UdemyRabbitMQ.subscriber.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/ref/UdemyRabbitMQ.subscriber.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/ref/UdemyRabbitMQ.subscriber.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/refint/UdemyRabbitMQ.subscriber.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/Debug/net8.0/refint/UdemyRabbitMQ.subscriber.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/UdemyRabbitMQ.subscriber.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/UdemyRabbitMQ.subscriber.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/UdemyRabbitMQ.subscriber.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/UdemyRabbitMQ.subscriber.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/UdemyRabbitMQ.subscriber/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,10 +35,16 @@
     &quot;accountId&quot;: &quot;6dd82b54-4b62-4040-acd9-4bab4a81f44c&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/gozen/Desktop/UdemyProjects/UdemyRabbitMQ.publisher/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gozen/Desktop/UdemyProjects/UdemyRabbitMQ.subscriber/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/gozen/Desktop/UdemyProjects/UdemyRabbitMQ.subscriber/Program.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
   <component name="KubernetesApiProvider"><![CDATA[{
   "isMigrated": true
 }]]></component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="Toolset" />
   </component>
@@ -165,13 +124,23 @@
       <workItem from="1739187384046" duration="189000" />
       <workItem from="1739188035315" duration="88000" />
       <workItem from="1739188254826" duration="90000" />
-      <workItem from="1739188354706" duration="1887000" />
+      <workItem from="1739188354706" duration="2858000" />
     </task>
+    <task id="LOCAL-00001" summary="Declare Fanout typed exchange">
+      <option name="closed" value="true" />
+      <created>1739190560914</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739190560914</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -186,6 +155,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Declare Fanout typed exchange" />
+    <option name="LAST_COMMIT_MESSAGE" value="Declare Fanout typed exchange" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
