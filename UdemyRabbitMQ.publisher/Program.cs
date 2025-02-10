@@ -7,6 +7,7 @@ namespace UdemyRabbitMQ.publisher;
 
 class Program
 {
+    private const string ExchangeName = "logs-fanout";
     static async Task Main(string[] args)
     {
         var factory = new ConnectionFactory();
@@ -17,14 +18,14 @@ class Program
 
         var channel = await coonection.CreateChannelAsync();
 
-        await channel.QueueDeclareAsync("hello-queue", true, false, false);
+        await channel.ExchangeDeclareAsync(ExchangeName, durable: true, type: ExchangeType.Fanout); 
 
         Enumerable.Range(1, 60).ToList().ForEach(x =>
         {
-            string message = $"Message:{x}";
+            string message = $"Log:{x}";
             var messageBody = Encoding.UTF8.GetBytes(message);
-            channel.BasicPublishAsync(string.Empty, "hello-queue", false, messageBody);  
-            Console.WriteLine("Message sent"); 
+            channel.BasicPublishAsync(ExchangeName, "", false, messageBody);  
+            Console.WriteLine($"Message{x} sent"); 
         });
 
     }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UdemyRabbitMQ.publisher")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ae58bc09f44f68cc3cbe0d8c9eb26a55f524a63")]
 [assembly: System.Reflection.AssemblyProductAttribute("UdemyRabbitMQ.publisher")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UdemyRabbitMQ.publisher")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
