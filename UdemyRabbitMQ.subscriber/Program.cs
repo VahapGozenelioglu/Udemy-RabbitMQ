@@ -14,9 +14,9 @@ class Program
         factory.Uri =
             new Uri("amqps://pprkqvbg:nrvsmOLyMLntI-KS-fmCvlGQUpLq6Pov@rattlesnake.rmq.cloudamqp.com/pprkqvbg");
 
-        await using var coonection = await factory.CreateConnectionAsync();
+        await using var connection = await factory.CreateConnectionAsync();
 
-        var channel = await coonection.CreateChannelAsync();
+        var channel = await connection.CreateChannelAsync();
 
         var randomQueueName = channel.QueueDeclareAsync().Result.QueueName;
         await channel.QueueBindAsync(randomQueueName, ExchangeName, "");
