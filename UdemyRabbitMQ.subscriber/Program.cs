@@ -3,13 +3,6 @@ using RabbitMQ.Client.Events;
 using System.Text;
 
 namespace UdemyRabbitMQ.subscriber;
-public enum LogTypes
-{
-    Critical = 1,
-    Error = 2,
-    Warning = 3,
-    Info = 4
-}
 
 class Program
 {
