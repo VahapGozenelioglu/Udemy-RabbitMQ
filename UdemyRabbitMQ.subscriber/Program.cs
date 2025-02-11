@@ -15,46 +15,19 @@ class Program
 {
     private const string ExchangeName = "header-exchange";
 
-    static async Task Main(string[] args)
+    static async Task Main()
     {
         var factory = CreateFactory();
+
         await using var connection = await factory.CreateConnectionAsync();
         var channel = await connection.CreateChannelAsync();
-        
-        var queueName = channel.QueueDeclareAsync().Result.QueueName;
-        
-        var headers = GetHeaders();
-        
-        await channel.QueueBindAsync(queueName, ExchangeName, string.Empty, headers!);
 
-        await channel.BasicQosAsync(0, 1, false);
+        var queueName = await SetupQueueAsync(channel);
 
-        var consumer = new AsyncEventingBasicConsumer(channel);
-        await channel.BasicConsumeAsync(queueName, false, consumer);
-
-        Console.WriteLine($"Waiting for messages ");
-
-        consumer.ReceivedAsync += async (sender, e) =>
-        {
-            var message = Encoding.UTF8.GetString(e.Body.ToArray());
-            Console.WriteLine($"Received: {message}");
-
-            // await SaveLogToFileAsync(logType, message);
-            await channel.BasicAckAsync(e.DeliveryTag, false);
-        };
+        Console.WriteLine("Waiting for messages...");
+        await StartConsumerAsync(channel, queueName);
 
         Console.ReadLine();
-    }
-
-    private static Dictionary<string, object> GetHeaders()
-    {
-        var headers = new Dictionary<string, object>
-        {
-            { "format", "pdf" },
-            { "shape", "a4" },
-            { "x-match", "any" }
-        };
-        return headers;
     }
 
     private static ConnectionFactory CreateFactory()
@@ -64,11 +37,42 @@ class Program
             Uri = new Uri("amqps://pprkqvbg:nrvsmOLyMLntI-KS-fmCvlGQUpLq6Pov@rattlesnake.rmq.cloudamqp.com/pprkqvbg")
         };
     }
-    
-    // Dont need to save log to file for this example
-    // private static async Task SaveLogToFileAsync(LogTypes logType, string message)
-    // {
-    //     var filePath = $"log-{logType.ToString().ToLower()}.txt";
-    //     await File.AppendAllTextAsync(filePath, message + Environment.NewLine);
-    // }
+
+    private static async Task<string> SetupQueueAsync(IChannel channel)
+    {
+        var queueResponse = await channel.QueueDeclareAsync();
+        var queueName = queueResponse.QueueName;
+        var headers = GetHeaders();
+
+        await channel.QueueBindAsync(queueName, ExchangeName, string.Empty, headers!);
+        await channel.BasicQosAsync(0, 1, false);
+
+        Console.WriteLine($"Queue '{queueName}' is bound with headers: {string.Join(", ", headers)}");
+        return queueName;
+    }
+
+    private static async Task StartConsumerAsync(IChannel channel, string queueName)
+    {
+        var consumer = new AsyncEventingBasicConsumer(channel);
+        await channel.BasicConsumeAsync(queueName, false, consumer);
+
+        consumer.ReceivedAsync += async (_, e) =>
+        {
+            var message = Encoding.UTF8.GetString(e.Body.ToArray());
+            Console.WriteLine($"[Received] {message}");
+
+            await channel.BasicAckAsync(e.DeliveryTag, false);
+        };
+    }
+
+    private static Dictionary<string, object> GetHeaders()
+    {
+        return new Dictionary<string, object>
+        {
+            { "format", "pdf" },
+            { "shape", "a4" },
+            { "x-match", "any" }
+        };
+    }
 }
+
