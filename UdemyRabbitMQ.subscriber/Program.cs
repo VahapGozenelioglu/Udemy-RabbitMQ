@@ -13,36 +13,26 @@ public enum LogTypes
 
 class Program
 {
-    private const string ExchangeName = "logs-direct";
+    private const string ExchangeName = "logs-topic";
 
     static async Task Main(string[] args)
     {
         var factory = CreateFactory();
         await using var connection = await factory.CreateConnectionAsync();
         var channel = await connection.CreateChannelAsync();
-
-        await StartConsumer(channel);
-    }
-
-    private static ConnectionFactory CreateFactory()
-    {
-        return new ConnectionFactory
-        {
-            Uri = new Uri("amqps://pprkqvbg:nrvsmOLyMLntI-KS-fmCvlGQUpLq6Pov@rattlesnake.rmq.cloudamqp.com/pprkqvbg")
-        };
-    }
-
-    private static async Task StartConsumer(IChannel channel)
-    {
+        
+        var queueName = channel.QueueDeclareAsync().Result.QueueName;
         var logType = (LogTypes)new Random().Next(1, 5);
-        var queueName = $"direct-queue-{logType}";
+        var routeKey = $"*.{logType}.*";
+        await channel.QueueBindAsync(queueName, ExchangeName, routeKey);
+        
 
         await channel.BasicQosAsync(0, 1, false);
 
         var consumer = new AsyncEventingBasicConsumer(channel);
         await channel.BasicConsumeAsync(queueName, false, consumer);
 
-        Console.WriteLine($"Waiting for logs with type: {logType} ...");
+        Console.WriteLine($"Waiting for logs with type: *.{logType}.*");
 
         consumer.ReceivedAsync += async (sender, e) =>
         {
@@ -55,7 +45,15 @@ class Program
 
         Console.ReadLine();
     }
-
+    
+    private static ConnectionFactory CreateFactory()
+    {
+        return new ConnectionFactory
+        {
+            Uri = new Uri("amqps://pprkqvbg:nrvsmOLyMLntI-KS-fmCvlGQUpLq6Pov@rattlesnake.rmq.cloudamqp.com/pprkqvbg")
+        };
+    }
+    
     private static async Task SaveLogToFileAsync(LogTypes logType, string message)
     {
         var filePath = $"log-{logType.ToString().ToLower()}.txt";
