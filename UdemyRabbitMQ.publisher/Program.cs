@@ -1,7 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.Text;
+using System.Text.Json;
 using RabbitMQ.Client;
+using Shared;
 
 namespace UdemyRabbitMQ.publisher;
 
@@ -27,7 +29,22 @@ class Program
             Persistent = true
         };
 
-        await channel.BasicPublishAsync(ExchangeName, String.Empty, false, properties, Encoding.UTF8.GetBytes("Message with headers"));
+        var jsonProduct = GetJsonProduct();
+
+        await channel.BasicPublishAsync(ExchangeName, String.Empty, false, properties, Encoding.UTF8.GetBytes(jsonProduct));
+    }
+
+    private static string GetJsonProduct()
+    {
+        var product = new Product
+        {
+            Id = 1,
+            Name = "Pencil",
+            Price = 0.5m,
+            Stock = 100
+        };
+        
+        return JsonSerializer.Serialize(product);
     }
 
     private static ConnectionFactory CreateFactory()

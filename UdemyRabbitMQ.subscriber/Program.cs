@@ -1,6 +1,8 @@
 ﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
+using System.Text.Json;
+using Shared;
 
 namespace UdemyRabbitMQ.subscriber;
 
@@ -52,7 +54,8 @@ class Program
         consumer.ReceivedAsync += async (_, e) =>
         {
             var message = Encoding.UTF8.GetString(e.Body.ToArray());
-            Console.WriteLine($"[Received] {message}");
+            Product? product = JsonSerializer.Deserialize<Product>(message);
+            Console.WriteLine($"Received product: {product?.Id}, {product?.Name}, {product?.Price}, {product?.Stock}");
 
             await channel.BasicAckAsync(e.DeliveryTag, false);
         };

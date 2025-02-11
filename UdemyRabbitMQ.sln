@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyRabbitMQ.publisher", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyRabbitMQ.subscriber", "UdemyRabbitMQ.subscriber\UdemyRabbitMQ.subscriber.csproj", "{A3A2DB4E-FF41-4FA9-9D44-7EA91E795E30}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{38F660CC-21AF-4510-8A3A-D3D36027A026}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{A3A2DB4E-FF41-4FA9-9D44-7EA91E795E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3A2DB4E-FF41-4FA9-9D44-7EA91E795E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3A2DB4E-FF41-4FA9-9D44-7EA91E795E30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38F660CC-21AF-4510-8A3A-D3D36027A026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38F660CC-21AF-4510-8A3A-D3D36027A026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38F660CC-21AF-4510-8A3A-D3D36027A026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38F660CC-21AF-4510-8A3A-D3D36027A026}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
