@@ -15,7 +15,7 @@ public enum LogTypes
 
 class Program
 {
-    private const string ExchangeName = "logs-topic";
+    private const string ExchangeName = "header-exchange";
     static async Task Main(string[] args)
     {
         var factory = CreateFactory();
@@ -23,10 +23,22 @@ class Program
         await using var connection = await factory.CreateConnectionAsync();
 
         var channel = await connection.CreateChannelAsync();
-        await channel.ExchangeDeclareAsync(ExchangeName, durable: true, type: ExchangeType.Topic); 
-        
+        await channel.ExchangeDeclareAsync(ExchangeName, durable: true, type: ExchangeType.Headers);
+
+        var properties = new BasicProperties()
+        {
+            Headers = new Dictionary<string, object>()
+            {
+                {"format", "pdf"},
+                {"shape2", "a4"}
+            }!,
+            Persistent = true
+        };
+
+        await channel.BasicPublishAsync(ExchangeName, String.Empty, false, properties, Encoding.UTF8.GetBytes("Message with headers"));
+            
         // await DeclareAndBindQueues(channel);
-        await SendMessage(channel);
+        // await SendMessage(channel);
     }
 
     private static ConnectionFactory CreateFactory()
@@ -50,26 +62,28 @@ class Program
     //     }
     // }
 
-    private static async Task SendMessage(IChannel channel)
-    {
-        var random = new Random();
     
-        for (int x = 1; x <= 60; x++)
-        {
-            var logType1 = (LogTypes)random.Next(1, 5);
-            var logType2 = (LogTypes)random.Next(1, 5);
-            var logType3 = (LogTypes)random.Next(1, 5);
-            
-            var message = $"Log type: {logType1}-{logType2}-{logType3}";
-            var routeKey = $"{logType1}.{logType2}.{logType3}";
-            
-            var messageBody = Encoding.UTF8.GetBytes(message);
-
-            await channel.BasicPublishAsync(ExchangeName, routeKey, false, messageBody);
-            Console.WriteLine($"Log sent {logType1}-{logType2}-{logType3}({x})");
-        
-            await Task.Delay(100);
-        }
-    }
+    // For Headers exhange we dont need this method
+    // private static async Task SendMessage(IChannel channel)
+    // {
+    //     var random = new Random();
+    //
+    //     for (int x = 1; x <= 60; x++)
+    //     {
+    //         var logType1 = (LogTypes)random.Next(1, 5);
+    //         var logType2 = (LogTypes)random.Next(1, 5);
+    //         var logType3 = (LogTypes)random.Next(1, 5);
+    //         
+    //         var message = $"Log type: {logType1}-{logType2}-{logType3}";
+    //         var routeKey = $"{logType1}.{logType2}.{logType3}";
+    //         
+    //         var messageBody = Encoding.UTF8.GetBytes(message);
+    //
+    //         await channel.BasicPublishAsync(ExchangeName, routeKey, false, messageBody);
+    //         Console.WriteLine($"Log sent {logType1}-{logType2}-{logType3}({x})");
+    //     
+    //         await Task.Delay(100);
+    //     }
+    // }
 
 }

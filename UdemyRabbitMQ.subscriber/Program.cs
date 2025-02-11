@@ -13,7 +13,7 @@ public enum LogTypes
 
 class Program
 {
-    private const string ExchangeName = "logs-topic";
+    private const string ExchangeName = "header-exchange";
 
     static async Task Main(string[] args)
     {
@@ -22,30 +22,41 @@ class Program
         var channel = await connection.CreateChannelAsync();
         
         var queueName = channel.QueueDeclareAsync().Result.QueueName;
-        var logType = (LogTypes)new Random().Next(1, 5);
-        var routeKey = $"*.{logType}.*";
-        await channel.QueueBindAsync(queueName, ExchangeName, routeKey);
         
+        var headers = GetHeaders();
+        
+        await channel.QueueBindAsync(queueName, ExchangeName, string.Empty, headers!);
 
         await channel.BasicQosAsync(0, 1, false);
 
         var consumer = new AsyncEventingBasicConsumer(channel);
         await channel.BasicConsumeAsync(queueName, false, consumer);
 
-        Console.WriteLine($"Waiting for logs with type: *.{logType}.*");
+        Console.WriteLine($"Waiting for messages ");
 
         consumer.ReceivedAsync += async (sender, e) =>
         {
             var message = Encoding.UTF8.GetString(e.Body.ToArray());
             Console.WriteLine($"Received: {message}");
 
-            await SaveLogToFileAsync(logType, message);
+            // await SaveLogToFileAsync(logType, message);
             await channel.BasicAckAsync(e.DeliveryTag, false);
         };
 
         Console.ReadLine();
     }
-    
+
+    private static Dictionary<string, object> GetHeaders()
+    {
+        var headers = new Dictionary<string, object>
+        {
+            { "format", "pdf" },
+            { "shape", "a4" },
+            { "x-match", "any" }
+        };
+        return headers;
+    }
+
     private static ConnectionFactory CreateFactory()
     {
         return new ConnectionFactory
@@ -54,9 +65,10 @@ class Program
         };
     }
     
-    private static async Task SaveLogToFileAsync(LogTypes logType, string message)
-    {
-        var filePath = $"log-{logType.ToString().ToLower()}.txt";
-        await File.AppendAllTextAsync(filePath, message + Environment.NewLine);
-    }
+    // Dont need to save log to file for this example
+    // private static async Task SaveLogToFileAsync(LogTypes logType, string message)
+    // {
+    //     var filePath = $"log-{logType.ToString().ToLower()}.txt";
+    //     await File.AppendAllTextAsync(filePath, message + Environment.NewLine);
+    // }
 }
